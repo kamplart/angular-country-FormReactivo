@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { filter, switchMap, tap } from 'rxjs';
 
-//import { CountriesService } from '../../services/countries.service';
+import { CountriesService } from '../../services/countries.service';
 import { Region, SmallCountry } from '../../interfaces/country.interfaces';
 
 @Component({
@@ -25,15 +25,15 @@ export class SelectorPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    //private countriesService: CountriesService,
+    private countriesService: CountriesService,
   ) {}
 
   ngOnInit(): void {
-    //this.onRegionChanged();
-    //this.onCountryChanged();
+    this.onRegionChanged();
+    this.onCountryChanged();
   }
 
-  /*
+
   get regions(): Region[] {
     return this.countriesService.regions;
   }
@@ -63,6 +63,6 @@ export class SelectorPageComponent implements OnInit {
       this.borders = countries;
     });
   }
-*/
+
 
 }
